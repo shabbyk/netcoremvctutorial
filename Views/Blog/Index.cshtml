@@ -1,0 +1,13 @@
+@{
+    var x = ViewData["ViewbagData"] as BlogPosts;
+}
+
+@model BlogPosts
+
+<h1>@ViewBag.Title</h1>
+
+<div class="text-center">
+    Title : @x.Title<br />
+    Description :  @x.Description<br />
+    Created Date : @x.CreatedOn<br />
+</div>
