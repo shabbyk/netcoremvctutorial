@@ -36,6 +36,11 @@ namespace MyCoreApplication.Models.Repo
             };
         }
 
+        public IEnumerable<BlogPosts> GetAllPosts()
+        {
+            return _posts;
+        }
+
         public BlogPosts GetPostById(int postId)
         {
             return _posts.FirstOrDefault(x => x.PostId == postId);

@@ -1,0 +1,11 @@
+@model BlogPosts
+@{ 
+    ViewData["Title"] = Model.Title;
+}
+
+<h1>@Model.Title</h1>
+<h6>@Model.CreatedOn</h6>
+
+<p>
+    @Model.Description
+</p>

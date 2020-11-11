@@ -14,14 +14,15 @@ namespace MyCoreApplication.Controllers
         
         public IActionResult Index()
         {
-            BlogPosts blog =  _blogRepository.GetPostById(2);
+            var blog =  _blogRepository.GetAllPosts();
 
-            ViewData["Title"] = "Title of my blog";
-            ViewData["BlogData"] = blog;
+            return View(blog);
+        }
 
-            ViewBag.ViewbagData = blog;
-
-            return View();
+        public IActionResult GetPost(int id)
+        {
+            var blog = _blogRepository.GetPostById(id);
+            return View(blog);
         }
     }
 }
