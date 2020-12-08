@@ -4,6 +4,7 @@ using MyCoreApplication.Models.Interfaces;
 
 namespace MyCoreApplication.Controllers
 {
+    [Route("[controller]/[action]")]
     public class BlogController :  Controller
     {
         private readonly IBlogRepository _blogRepository;
@@ -12,6 +13,9 @@ namespace MyCoreApplication.Controllers
             _blogRepository = blogRepository;
         }
         
+        [Route("")]
+        [Route("~/")]
+        [Route("~/Blog")]
         public IActionResult Index()
         {
             var blog =  _blogRepository.GetAllPosts();
@@ -19,6 +23,7 @@ namespace MyCoreApplication.Controllers
             return View(blog);
         }
 
+        [Route("{id}")]
         public IActionResult GetPost(int id)
         {
             var blog = _blogRepository.GetPostById(id);
