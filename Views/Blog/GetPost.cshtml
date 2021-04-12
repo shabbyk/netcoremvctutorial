@@ -9,3 +9,7 @@
 <p>
     @Model.Description
 </p>
+
+@* @Html.ActionLink("Back", "Index", "Blog", null, new { @class = "my-label-class", @id = "myId" }) *@
+
+<a class="my-label-class" asp-action="Index" asp-controller="Blog">Back</a>
