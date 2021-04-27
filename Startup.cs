@@ -53,7 +53,7 @@ namespace MyCoreApplication
             {
                 endpoints.MapControllerRoute(
                     name: "Blog",
-                    pattern: "/Blog/{id}",
+                    pattern: "/Blog/{id:int}",
                     defaults: new { controller = "Blog", action = "GetPost" });
 
                 endpoints.MapControllerRoute(

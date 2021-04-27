@@ -24,5 +24,10 @@ namespace MyCoreApplication.Controllers
             var blog = _blogRepository.GetPostById(id);
             return View(blog);
         }
+
+        public IActionResult CreatePost()
+        {
+            return View();
+        }
     }
 }
