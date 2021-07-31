@@ -28,7 +28,7 @@ namespace MyCoreApplication.Controllers
 
         public IActionResult Index()
         {
-            //return _blogRepo.GetPostById(2).Title;
+            ViewData["sdk"] = System.Environment.Version.ToString();
             return View();
         }
 

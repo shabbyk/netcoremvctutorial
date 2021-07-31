@@ -1,0 +1,19 @@
+@model BlogPosts
+@{ 
+    ViewData["Title"] = Model.Title;
+}
+
+<h1>@Model.Title</h1>
+
+<h6>@Model.CreatedOn</h6>
+
+<p>
+    @Model.Description
+</p>
+
+@* Html helpers *@
+@* @Html.ActionLink("Back", "Index", "Blog", null, new { @class = "back-button-class" }) <br />
+@Html.TextBox("genericTexBox", "Default value", new { @class = "my-input"}) *@
+
+@* Tag Helpers *@
+<a class="my-action-link" asp-action="Index" asp-controller="Blog">Go back</a>

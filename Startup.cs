@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -51,6 +52,12 @@ namespace MyCoreApplication
 
             app.UseEndpoints(endpoints =>
             {
+                // endpoints.MapControllers();
+                // endpoints.MapControllerRoute(
+                //     name: "Blog",
+                //     pattern: "Blog/ViewPost/{id?}",
+                //     defaults: new { controller = "Blog", action = "Index" });
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

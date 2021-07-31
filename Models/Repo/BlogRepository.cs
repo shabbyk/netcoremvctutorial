@@ -36,9 +36,24 @@ namespace MyCoreApplication.Models.Repo
             };
         }
 
+        public IEnumerable<BlogPosts> GetAllPosts()
+        {
+            return _posts;
+        }
+
         public BlogPosts GetPostById(int postId)
         {
             return _posts.FirstOrDefault(x => x.PostId == postId);
+        }
+
+        public bool AddPost(BlogPosts blogPost)
+        {
+            blogPost.PostId = _posts.Max(x => x.PostId) + 1;
+            blogPost.CreatedOn = DateTime.Now;
+            
+            _posts.Add(blogPost);
+
+            return true;
         }
     }
 }
