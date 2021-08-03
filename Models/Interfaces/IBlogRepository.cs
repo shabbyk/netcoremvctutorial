@@ -6,5 +6,7 @@ namespace MyCoreApplication.Models.Interfaces
     {
         IEnumerable<BlogPosts> GetAllPosts();
         BlogPosts GetPostById(int postId);
+
+        bool AddBlog(BlogPosts blog);
     }
 }

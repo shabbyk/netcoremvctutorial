@@ -29,5 +29,12 @@ namespace MyCoreApplication.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult CreatePost(BlogPosts post)
+        {
+            _blogRepository.AddBlog(post);
+            return RedirectToAction("GetPost", new { id = post.PostId});
+        }
     }
 }

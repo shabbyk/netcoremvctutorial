@@ -36,6 +36,15 @@ namespace MyCoreApplication.Models.Repo
             };
         }
 
+        public bool AddBlog(BlogPosts blog)
+        {
+            blog.PostId = _posts.Max(x => x.PostId) + 1;
+            blog.CreatedOn = DateTime.Now;
+
+            _posts.Add(blog);
+            return true;
+        }
+
         public IEnumerable<BlogPosts> GetAllPosts()
         {
             return _posts;
